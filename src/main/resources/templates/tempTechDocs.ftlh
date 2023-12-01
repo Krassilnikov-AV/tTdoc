@@ -19,7 +19,7 @@
 	№ Документа: <input type="text" name="numberDocument"><br><br>
 	№ Детали: <input type="number" name="id_detail"><br><br>
 	Шифр Доработки: <input type="number" name="reasonCod"><br><br>
-	<#--Дата окончания действия (при наличии): <input type="date" name="validityPeriod"><br><br>-->
+	Дата окончания действия (при наличии): <input type="date" name="validityPeriod"><br><br>
 	кооличество (при наличии): <input type="number" name="quantity"><br><br>
 	№ операции: <input type="number" name="numberOperation"><br><br>
 	Наименование станка: <input type="text" name="nameEquipment"><br><br>

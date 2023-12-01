@@ -9,7 +9,7 @@
 <b>№ Документа: </b>${tempTechDoc.numberDocument}<br>
 <b>№ Детали: </b>${tempTechDoc.id_detail}<br>
 <b>Шифр Доработки: </b>${tempTechDoc.reasonCod}<br>
-<#--<b>Дата окончания действия (при наличии): </b>${tempTechDoc.validityPeriod}<br>-->
+<b>Дата окончания действия (при наличии): </b>${tempTechDoc.validityPeriod}<br>
 <b>количество (при наличии): </b>${tempTechDoc.quantity}<br>
 <b>№ операции: </b>${tempTechDoc.numberOperation}<br>
 <b>Наименование станка: </b>${tempTechDoc.nameEquipment}<br>

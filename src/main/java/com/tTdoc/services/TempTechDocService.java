@@ -1,8 +1,9 @@
 package com.tTdoc.services;
 
-import com.tTdoc.models.TempTechDoc;
+import com.tTdoc.models.*;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.*;
 
 /**
@@ -17,13 +18,14 @@ public class TempTechDocService {
 	private long ID = 0;
 
 	{
-		tempTechDocs.add(new TempTechDoc(++ID, "134-56-21", 4,
-			4689, 1, 56,
-			"351", 68186, 36, 3,
-			3, 2, "торец Ф", "Синицин А.Г."));
 
 		tempTechDocs.add(new TempTechDoc(++ID, "134-108-21", 5,
-			4689, 1, 56,
+			4689, LocalDate.of(2023,12,23), 1, 56,
+			"351", 68186, 5, 6,
+			4, 2, "торец Д", "Синицин А.Г."));
+
+		tempTechDocs.add(new TempTechDoc(++ID, "134-259-21", 5,
+			4689, LocalDate.of(2023,12,23), 1, 56,
 			"351", 68186, 5, 6,
 			4, 2, "торец Д", "Синицин А.Г."));
 	}
@@ -35,7 +37,6 @@ public class TempTechDocService {
 		}
 		return null;
 	}
-
 
 
 	public List<TempTechDoc> listTempTechDocs(String numberDocument) {

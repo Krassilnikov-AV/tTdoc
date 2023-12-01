@@ -18,10 +18,6 @@ public class TempTechDocController {
 
 	private final TempTechDocService tempTechDocService;
 
-//	public TempTechDocController(TempTechDocService tempTechDocService) {
-//		this.tempTechDocService = tempTechDocService;
-//	}
-
 	@GetMapping(value = "/")
 	public String techDocuments(@RequestParam(name = "numberDocument", required = false) String numberDocument, Model model) {
 		model.addAttribute("tempTechDocs", tempTechDocService.listTempTechDocs(numberDocument));
@@ -34,9 +30,9 @@ public class TempTechDocController {
 		return "tempTechDoc-info";
 	}
 
-
-	@PostMapping("/tempTechDoc/create")
-	public String createTempTechDoc(TempTechDoc tempTechDoc) {
+	@PostMapping(value = "/tempTechDoc/create")
+	public String createTempTechDoc(
+		TempTechDoc tempTechDoc) {
 		tempTechDocService.saveTempTechDoc(tempTechDoc);
 		return "redirect:/";
 	}

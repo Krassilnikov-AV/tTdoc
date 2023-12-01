@@ -1,6 +1,9 @@
 package com.tTdoc.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
+
+import java.time.LocalDate;
 
 /**
  * \* @author AleKras on 25.11.2023
@@ -11,17 +14,19 @@ import lombok.*;
 @AllArgsConstructor
 public class TempTechDoc {
 
-	//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 //	@Column(name = "id")
 	private Long id;
 //	@Column(name = "numberDocument")
 	private String numberDocument;
-	//	@Column(name = "id")
+//	@Column(name = "id")
 	private int id_detail;
 	//	@Column(name = "reasonCod")
 	private int reasonCod;
 	//	@Column(name = "validityPeriod")
-//	private LocalDate validityPeriod;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	private LocalDate validityPeriod;
+//	private String validityPeriod;
 	//	@Column(name = "quantity")
 	private int quantity;
 	//	@Column(name = "numberOperation")
@@ -42,5 +47,4 @@ public class TempTechDoc {
 	private String description;
 	//	@Column(name = "author")
 	private String author;
-
 }
