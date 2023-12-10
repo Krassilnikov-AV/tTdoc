@@ -59,11 +59,11 @@ public class Document {
  */
 
 @Entity
-@Table(name = "products")
+@Table(name = "documents")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+public class Document {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -79,7 +79,7 @@ public class Product {
     @Column(name = "author")
     private String author;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
-    mappedBy = "product")
+    mappedBy = "document")
     private List<Image> images = new ArrayList<>();
     private Long previewImageId;
     private LocalDateTime dateOfCreated;
@@ -90,7 +90,7 @@ public class Product {
     }
 
     public void addImageToProduct(Image image) {
-        image.setProduct(this);
+        image.setDocument(this);
         images.add(image);
     }
 }

@@ -33,7 +33,7 @@ public class Image {
 //	@Column(name = "bytes", columnDefinition = "BLOB NOT NULL")
 	private byte[] bytes;
 	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-	private Product temptechdoc;
+	private Document temptechdoc;
 }*/
 
 import lombok.AllArgsConstructor;
@@ -65,6 +65,6 @@ public class Image {
 	@Lob
 	private byte[] bytes;
 	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-	private Product product;
+	private Document document;
 }
 

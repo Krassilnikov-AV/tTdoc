@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BUYSELL</title>
+	<meta charset="utf-8">
+	<title>ТУК</title>
 </head>
+<style>
+	input {
+		background: w#FFFFFF; /* Цвет фона */
+		color: #000000; /* Цвет текста */
+		padding: 5px; /* Поля */
+		border: transparent; /* Прячем рамку */
+		width: 200px; /* Ширина поля */
+	}
+	::-webkit-input-placeholder {
+		color: #000000; /* Chrome, Safari, Opera */
+	}
+	::-moz-placeholder {
+		color: #000000; /* Firefox */
+	}
+	:-ms-input-placeholder {
+		color: #000000; /* IE */
+	}
+</style>
 <body>
-<h1>BUYSELL</h1><hr>
-<h4>Товары со всей России</h4>
+<h1>ТУки</h1><hr>
+<h4>ТехУказания</h4>
 <form action="/" method="get">
-	Поиск по названию объявления: <input type="text" name="title"><br>
+	Поиск по названию: <input type="text" name="title" placeholder="Название ТУКа"><br>
 	<input type="submit" value="Поиск"/>
 </form>
-<#list products as product>
+<#list documents as document>
 	<div>
-		<p><b>${product.title}</b> ${product.price} руб. | <a href="/product/${product.id}">Подробнее...</a></p>
+		<p><b>${document.title}</b> ${document.price} руб. | <a href="/document/${document.id}">Подробнее...</a></p>
 	</div>
 <#else>
-	<h3>Товаров нет</h3>
+	<h3>Технолгических документов нет</h3>
 </#list>
 <hr>
 <h3>Создать новый товар</h3>
-<form action="/product/create" method="post" enctype="multipart/form-data">
+<form action="/document/create" method="post" enctype="multipart/form-data">
 	Название объявления: <input type="text" name="title"/><br><br>
 	Описание объявления: <input type="text" name="description"/><br><br>
 	Цена: <input type="number" name="price"/><br><br>
