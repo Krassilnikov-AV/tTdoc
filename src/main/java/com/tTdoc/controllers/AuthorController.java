@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequiredArgsConstructor
 public class AuthorController {
-	private  AuthorService authorService;
+	private final AuthorService authorService;
 
 
 	@GetMapping("/authors")
@@ -31,7 +31,6 @@ public class AuthorController {
 		authorService.saveAuthor(author);
 		return "redirect:/authors";
 	}
-
 
 	@GetMapping("/author/{id}")
 	public String authorInfo(@PathVariable Long id, Model model) {

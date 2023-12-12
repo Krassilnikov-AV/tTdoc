@@ -41,6 +41,8 @@
 <h3>Записать нового атора</h3>
 <form action="/author/create" method="post">
 	Имя автора: <input type="text" name="fio"/><br><br>
+	Отдел автора: <input type="text" name="department"/><br><br>
+
 	<input type="submit" value="Добавить автора"/>
 </form>
 </body>

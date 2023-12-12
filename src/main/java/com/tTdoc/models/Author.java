@@ -22,6 +22,6 @@ public class Author {
 	private Long id;
 	@Column(name = "fio", columnDefinition = "text")
 	private String fio;
-	@Column(name = "city", columnDefinition = "text")
-	private String city;
+	@Column(name = "department", columnDefinition = "text")
+	private String department;
 }

@@ -10,7 +10,7 @@
 	<#--<img src="/images/${img.id}" height="60px"/><br><br>-->
 <#--</#list>-->
 <b>Имя автора: </b>${author.fio}<br>
-<b>город автора: </b>${author.city}<br>
+<b>подразделение автора: </b>${author.department}<br>
 <hr>
 
 </body>
