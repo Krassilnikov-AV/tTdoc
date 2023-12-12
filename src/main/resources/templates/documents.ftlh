@@ -4,24 +4,24 @@
 	<meta charset="utf-8">
 	<title>ТУК</title>
 </head>
-<style>
-	input {
-		background: w#FFFFFF; /* Цвет фона */
-		color: #000000; /* Цвет текста */
-		padding: 5px; /* Поля */
-		border: transparent; /* Прячем рамку */
-		width: 200px; /* Ширина поля */
-	}
-	::-webkit-input-placeholder {
-		color: #000000; /* Chrome, Safari, Opera */
-	}
-	::-moz-placeholder {
-		color: #000000; /* Firefox */
-	}
-	:-ms-input-placeholder {
-		color: #000000; /* IE */
-	}
-</style>
+<#--<style>-->
+	<#--input {-->
+		<#--background: w#FFFFFF; /* Цвет фона */-->
+		<#--color: #000000; /* Цвет текста */-->
+		<#--padding: 5px; /* Поля */-->
+		<#--border: transparent; /* Прячем рамку */-->
+		<#--width: 200px; /* Ширина поля */-->
+	<#--}-->
+	<#--::-webkit-input-placeholder {-->
+		<#--color: #000000; /* Chrome, Safari, Opera */-->
+	<#--}-->
+	<#--::-moz-placeholder {-->
+		<#--color: #000000; /* Firefox */-->
+	<#--}-->
+	<#--:-ms-input-placeholder {-->
+		<#--color: #000000; /* IE */-->
+	<#--}-->
+<#--</style>-->
 <body>
 <h1>ТУки</h1><hr>
 <h4>ТехУказания</h4>
@@ -36,6 +36,7 @@
 <#else>
 	<h3>Технолгических документов нет</h3>
 </#list>
+
 <hr>
 <h3>Создать новый товар</h3>
 <form action="/document/create" method="post" enctype="multipart/form-data">
@@ -49,6 +50,21 @@
 	Третья фотография: <input type="file" name="file3"/><br><br>
 	<input type="submit" value="Добавить товар"/>
 </form>
+<hr>
+<#--<h3>Записать нового атора</h3>-->
+<#--<form action="/author/create" method="post">-->
+	<#--Имя автора: <input type="text" name="name"/><br><br>-->
+	<#--<input type="submit" value="Добавить автора"/>-->
+<#--</form>-->
+
+<#--<#list authors as author>-->
+	<#--<div>-->
+		<#--<p><b>${author.name}</b> | <a href="/author/${author.id}">Подробнее...</a></p>-->
+	<#--</div>-->
+<#--<#else>-->
+	<#--<h3>Авторов нет :( </h3>-->
+<#--</#list>-->
+
 </body>
 </html>
 

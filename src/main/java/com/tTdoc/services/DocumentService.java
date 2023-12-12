@@ -87,28 +87,16 @@ import java.util.*;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class ProductService {
+public class DocumentService {
 	private final DocumentRepository documentRepository;
-//	private final AuthorRepository authorRepository;
 
-	public List<Document> listProducts(String title) {
+	public List<Document> listDocuments(String title) {
 		if (title != null) return documentRepository.findByTitle(title);
 		return documentRepository.findAll();
 	}
 
-//	public Author findAuthor(Long id) {
-//		Author author = new Author();
-//		if (id != 0)
-//			authorRepository.findById(id);
-//		return author;
-//	}
-//
-//	public void saveAuthor(Author author) {
-//		log.info("Saving new Document. Id: {}; Author: {}", author.getId(), author.getAuthor());
-//		authorRepository.save(author);
-//	}
 
-	public void saveProduct(Document document, MultipartFile file1,
+	public void saveDocument(Document document, MultipartFile file1,
 							MultipartFile file2, MultipartFile file3) throws IOException {
 		Image image1;
 		Image image2;

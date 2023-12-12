@@ -68,7 +68,7 @@ public class Document {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "title")
+    @Column(name = "title", columnDefinition = "text")
     private String title;
     @Column(name = "description", columnDefinition = "text")
     private String description;

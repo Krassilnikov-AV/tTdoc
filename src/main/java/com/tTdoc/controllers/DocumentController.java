@@ -44,8 +44,8 @@ public class DocumentController {
 */
 
 
-import com.tTdoc.models.Document;
-import com.tTdoc.services.ProductService;
+import com.tTdoc.models.*;
+import com.tTdoc.services.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -57,17 +57,17 @@ import java.io.IOException;
 @Controller
 @RequiredArgsConstructor
 public class DocumentController {
-	private final ProductService productService;
-
+	private final DocumentService documentService;
 	@GetMapping("/")
-	public String products(@RequestParam(name = "title", required = false) String title, Model model) {
-		model.addAttribute("documents", productService.listProducts(title));
+	public String documents(@RequestParam(name = "title", required = false) String title, Model model) {
+		model.addAttribute("documents", documentService.listDocuments(title));
 		return "documents";
 	}
 
+
 	@GetMapping("/document/{id}")
 	public String productInfo(@PathVariable Long id, Model model) {
-		Document document = productService.getProductById(id);
+		Document document = documentService.getProductById(id);
 		model.addAttribute("document", document);
 		model.addAttribute("images", document.getImages());
 		return "document-info";
@@ -76,13 +76,13 @@ public class DocumentController {
 	@PostMapping("/document/create")
 	public String createProduct(@RequestParam("file1") MultipartFile file1, @RequestParam("file2") MultipartFile file2,
 								@RequestParam("file3") MultipartFile file3, Document document) throws IOException {
-		productService.saveProduct(document, file1, file2, file3);
+		documentService.saveDocument(document, file1, file2, file3);
 		return "redirect:/";
 	}
 
 	@PostMapping("/document/delete/{id}")
 	public String deleteProduct(@PathVariable Long id) {
-		productService.deleteProduct(id);
+		documentService.deleteProduct(id);
 		return "redirect:/";
 	}
 }
