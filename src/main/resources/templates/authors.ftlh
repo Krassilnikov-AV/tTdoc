@@ -23,7 +23,8 @@
 <#--}-->
 <#--</style>-->
 <body>
-<h1>ТУки</h1><hr>
+<h1>ТУки</h1>
+<hr>
 <h4>Авторы:</h4>
 <form action="/authors" method="get">
 	Поиск по названию: <input type="text" name="fio" placeholder="имя автора"><br>
@@ -37,6 +38,12 @@
 	<h3>Авторов нет :( </h3>
 </#list>
 <hr>
+<#--<p><select name="fio">-->
+		<#--<#list authors.fios as fio, value>-->
+			<#--${fio}=${value}-->
+		<#--</#list>-->
+	<#--</select></p>-->
+
 <hr>
 <h3>Записать нового атора</h3>
 <form action="/author/create" method="post">
