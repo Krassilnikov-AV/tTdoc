@@ -64,33 +64,33 @@ public class Document {
 @AllArgsConstructor
 @NoArgsConstructor
 public class Document {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
-    @Column(name = "title", columnDefinition = "text")
-    private String title;
-    @Column(name = "description", columnDefinition = "text")
-    private String description;
-    @Column(name = "price")
-    private int price;
-    @Column(name = "city")
-    private String city;
-    @Column(name = "author")
-    private String author;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
-    mappedBy = "document")
-    private List<Image> images = new ArrayList<>();
-    private Long previewImageId;
-    private LocalDateTime dateOfCreated;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Long id;
+	@Column(name = "title", columnDefinition = "text")
+	private String title;
+	@Column(name = "description", columnDefinition = "text")
+	private String description;
+	@Column(name = "price")  // дата окончания
+	private int price;
+	@Column(name = "city")   // количество. шт
+	private String city;
+	@Column(name = "author")   // id автора
+	private String author;
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
+		mappedBy = "document")
+	private List<Image> images = new ArrayList<>();
+	private Long previewImageId;
+	private LocalDateTime dateOfCreated;
 
-    @PrePersist
-    private void init() {
-        dateOfCreated = LocalDateTime.now();
-    }
+	@PrePersist
+	private void init() {
+		dateOfCreated = LocalDateTime.now();
+	}
 
-    public void addImageToProduct(Image image) {
-        image.setDocument(this);
-        images.add(image);
-    }
+	public void addImageToProduct(Image image) {
+		image.setDocument(this);
+		images.add(image);
+	}
 }

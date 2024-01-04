@@ -24,4 +24,7 @@ public class Author {
 	private String fio;
 	@Column(name = "department", columnDefinition = "text")
 	private String department;
+//	@Column(name = "document_id")
+//	@OneToOne(cascade = CascadeType.MERGE, mappedBy = "author")
+//	private Long document_id;
 }

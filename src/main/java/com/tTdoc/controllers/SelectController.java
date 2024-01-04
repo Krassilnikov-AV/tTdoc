@@ -16,7 +16,6 @@ import java.util.*;
 @Controller
 public class SelectController {
 
-	// Annotation
 	@RequestMapping(value = "/app")
 	public String view(Model model) {
 		SelectBean sel = new SelectBean();
@@ -24,7 +23,6 @@ public class SelectController {
 		return "select";
 	}
 
-	// Annotation
 	@ModelAttribute("educationDetails")
 	public List<String> educationDetailsList()	{
 		List<String> educationList = Arrays.asList(
@@ -33,7 +31,6 @@ public class SelectController {
 		return educationList;
 	}
 
-	// Annotation
 	@RequestMapping(value = "/submit",	method = RequestMethod.POST)
 	public String submit(@ModelAttribute("select") SelectBean select)	{
 		return "selectSummary";

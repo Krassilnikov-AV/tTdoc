@@ -10,6 +10,7 @@
 <body>
 <h1>Welcome to GeeksforGeeks!</h1>
 
+<%--@elvariable id="select" type="java"--%>
 <form:form action="submit" method="post" modelAttribute="select">
   <table>
     <tr>
